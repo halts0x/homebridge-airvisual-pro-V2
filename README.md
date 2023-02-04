@@ -1,3 +1,6 @@
+Improve initialisation of AirQuality values into homekit on startup 
+Set custom airquality levels
+
 # homebridge-airvisual-pro
 
 [AirVisual Pro](https://www.airvisual.com/air-quality-monitor) plugin for [Homebridge](https://github.com/nfarina/homebridge).
@@ -19,7 +22,6 @@
 ```json
 "accessories": [
         {
-            {
     "accessory": "AirVisualPro",
     "name": "AirVisualPro",
     "ip": "192.168.1.101",
@@ -31,8 +33,6 @@
     "AQFair": 45,
     "AQinf": 65,
     "logging": false,
-
-}
         }
 ]
 ```
