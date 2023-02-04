@@ -8,7 +8,7 @@ Set custom airquality levels
 # Installation
 
 1. Install Homebridge using: `[sudo] npm install -g homebridge`
-2. Install this plugin using: `[sudo] npm install -g homebridge-airvisual-pro`
+2. Install this plugin using: `[sudo] npm install -g homebridge-airvisual-pro-v2`
 3. Update your configuration file. See the sample below.
 
 # Updating
