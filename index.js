@@ -19,17 +19,21 @@ function AirVisualProAccessory(log, config) {
 	this.user = config["user"];
 	this.pass = config["pass"];
 	this.co2_critical = config["co2_critical"];
+	this.AQIThresh1 = config["AQExcellent"] || 11;
+	this.AQIThresh2 = config["AQGood"] || 24;
+	this.AQIThresh3 = config["AQFair"] || 45;
+	this.AQIThresh4 = config["AQInf"] || 65;
 	this.logging = config["logging"] || false;
 	
 	this.airdata = '';
 	this.aq_status = 0;
 	
-	this.aqi = 0;
-	this.pm25 = 0;
-	this.pm10 = 0;
-	this.temp_c = 0;
-	this.hm = 0;
-	this.co2 = 0;
+	this.aqi = 2;
+	this.pm25 = 113;
+	this.pm10 = 113;
+	this.temp_c = 20;
+	this.hm = 50;
+	this.co2 = 600;
 	
 	setInterval((function () {
 		this.refresh();
@@ -146,19 +150,20 @@ getAirQuality: function (callback) {
 
 setAirQuality: function (aqi) {
 	var that = this;
-	if (aqi >= 0 && aqi <= 50) {
+	if (aqi >= 0 && aqi <= this.AQIThresh1) {
 		that.aq_status = 1;
-	} else if (aqi > 50 && aqi <= 100) {
+	} else if (aqi > this.AQIThresh1 && aqi <= this.AQIThresh2) {
 		that.aq_status = 2;
-	} else if (aqi > 100 && aqi <= 150) { 
+	} else if (aqi > this.AQIThresh2 && aqi <= this.AQIThresh3) { 
 		that.aq_status = 3;
-	} else if (aqi > 150 && aqi <= 200) {
+	} else if (aqi > this.AQIThresh3 && aqi <= this.AQIThresh4) {
 		that.aq_status = 4;
-	} else if (aqi > 200) {
+	} else if (aqi > this.AQIThresh4) {
 		that.aq_status = 5;
 	} else {
 		that.aq_status = 0;
 	}
+	that.log ("AQ_status - AQI" + aqi + " -> " + that.aq_status);
 	that.airqualityService.setCharacteristic(Characteristic.AirQuality, that.aq_status);
 },
 
