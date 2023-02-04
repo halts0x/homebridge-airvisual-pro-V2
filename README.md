@@ -19,12 +19,20 @@
 ```json
 "accessories": [
         {
-            "accessory": "AirVisualPro",
-            "name": "AirVisual Pro",
-            "ip": "10.0.1.2",
-            "user": "airvisual",
-            "pass": "p4ssw0rd",
-            "co2_critical": 1000
+            {
+    "accessory": "AirVisualPro",
+    "name": "AirVisualPro",
+    "ip": "192.168.1.101",
+    "user": "airvisual",
+    "pass": "passw0rd",
+    "co2_critical": 1000,
+    "AQExcellent": 11,
+    "AQGood": 24,
+    "AQFair": 45,
+    "AQinf": 65,
+    "logging": false,
+
+}
         }
 ]
 ```
