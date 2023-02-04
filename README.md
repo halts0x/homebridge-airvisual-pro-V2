@@ -13,7 +13,7 @@ Set custom airquality levels
 
 # Updating
 
-- `[sudo] npm install -g homebridge-airvisual-pro`
+- `[sudo] npm install -g homebridge-airvisual-pro-v2`
 
 # Configuration
 
