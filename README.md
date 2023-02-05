@@ -1,5 +1,5 @@
-1. Improve initialisation of AirQuality values into homekit on startup 
-2.Set custom AQ trigger levels in config
+1. Improve initialisation of AirQuality values into homekit on startup` 
+3.Set custom AQ trigger levels in config
 
 # homebridge-airvisual-pro
 
