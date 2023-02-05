@@ -1,6 +1,9 @@
-1. Improve initialisation of AirQuality values into homekit on startup
+1. hack Improve initialisation of AirQuality values into homekit on startup
  
 2.Set custom AQ trigger levels in config
+
+Todo
+improve initialising and polling/update sequence.
 
 # homebridge-airvisual-pro
 
